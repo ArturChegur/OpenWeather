@@ -17,7 +17,7 @@ public class City {
     private Long id;
     @Column(unique = true)
     private String name;
-    private Integer longitude;
-    private Integer latitude;
+    private Double longitude;
+    private Double latitude;
 
 }

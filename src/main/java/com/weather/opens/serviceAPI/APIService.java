@@ -4,5 +4,5 @@ import com.weather.opens.model.WeatherDTO;
 
 
 public interface APIService {
-    WeatherDTO getDataFromAPI(WeatherDTO dto);
+    WeatherDTO getDataFromAPI(String cityName);
 }

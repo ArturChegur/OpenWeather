@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.weather.opens.model.WeatherDTO;
 import com.weather.opens.service.impl.WeatherServiceOpenWeather;
 
 import lombok.RequiredArgsConstructor;
@@ -16,15 +14,12 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/weather")
 @RequiredArgsConstructor
-public class Controller {
+public class WeatherController {
     private final WeatherServiceOpenWeather weatherService;
-    private final ObjectMapper mapper;
-
 
     @GetMapping("/{cityName}")
-    public JsonNode cityWeather(@PathVariable String cityName) throws JsonProcessingException {
-        String jsonData = mapper.writeValueAsString(weatherService.getTemperature(cityName));
-        return mapper.readTree(jsonData);
+    public WeatherDTO cityWeather(@PathVariable String cityName)  {
+        return weatherService.getTemperature(cityName);
     }
 
 }
