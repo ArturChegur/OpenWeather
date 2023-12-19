@@ -10,18 +10,20 @@ import com.weather.opens.model.WeatherDTO;
 import com.weather.opens.service.impl.CityServiceImpl;
 import com.weather.opens.util.MappingUtils;
 
-import lombok.RequiredArgsConstructor;
-
 
 @Service
-@RequiredArgsConstructor
 public class OpenWeatherAPI implements APIService {
-    @Value("${address}")
-    private  String ADDRESS;
-    @Value("${token}")
-    private  String TOKEN;
+    private final String ADDRESS;
+    private final String TOKEN;
     private final CityServiceImpl cityService;
     private final MappingUtils mappingUtils;
+
+    public OpenWeatherAPI(@Value("${address}") String ADDRESS, @Value("${token}") String TOKEN, CityServiceImpl cityService, MappingUtils mappingUtils) {
+        this.ADDRESS = ADDRESS;
+        this.TOKEN = TOKEN;
+        this.cityService = cityService;
+        this.mappingUtils = mappingUtils;
+    }
 
     public WeatherDTO getDataFromAPI(String cityName) {
         RestTemplate restTemplate = new RestTemplate();
@@ -31,4 +33,5 @@ public class OpenWeatherAPI implements APIService {
         dto.setTemperature(Double.parseDouble(weatherApiCall.get("main").get("temp").toString()));
         return dto;
     }
+
 }
