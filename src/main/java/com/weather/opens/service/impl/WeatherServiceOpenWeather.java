@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.weather.opens.model.WeatherDTO;
 import com.weather.opens.service.WeatherService;
-import com.weather.opens.serviceAPI.OpenWeatherAPI;
+import com.weather.opens.serviceAPI.impl.OpenWeatherAPI;
 
 import lombok.RequiredArgsConstructor;
 

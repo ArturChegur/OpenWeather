@@ -1,4 +1,4 @@
-package com.weather.opens.serviceAPI;
+package com.weather.opens.serviceAPI.impl;
 
 
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.weather.opens.model.WeatherDTO;
 import com.weather.opens.service.impl.CityServiceImpl;
+import com.weather.opens.serviceAPI.APIService;
 import com.weather.opens.util.MappingUtils;
 
 
@@ -18,7 +19,7 @@ public class OpenWeatherAPI implements APIService {
     private final CityServiceImpl cityService;
     private final MappingUtils mappingUtils;
 
-    public OpenWeatherAPI(@Value("${address}") String ADDRESS, @Value("${token}") String TOKEN, CityServiceImpl cityService, MappingUtils mappingUtils) {
+    public OpenWeatherAPI(@Value("${service.openweather.address}") String ADDRESS, @Value("${service.openweather.token}") String TOKEN, CityServiceImpl cityService, MappingUtils mappingUtils) {
         this.ADDRESS = ADDRESS;
         this.TOKEN = TOKEN;
         this.cityService = cityService;
