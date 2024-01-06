@@ -21,5 +21,4 @@ public class WeatherController {
     public WeatherDTO cityWeather(@PathVariable String cityName)  {
         return weatherService.getTemperature(cityName);
     }
-
 }

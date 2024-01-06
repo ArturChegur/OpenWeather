@@ -7,7 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-service:
+source:
   openweather:
     token: 'c451d6977f9e43648a3893e8fc66ccb4'
     address: 'https://api.openweathermap.org/data/2.5/weather?'

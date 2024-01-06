@@ -18,5 +18,4 @@ public class CityServiceImpl implements CityService {
     public City findCityByCoordinates(String cityName) {
         return cityRepository.findCityByName(cityName);
     }
-
 }

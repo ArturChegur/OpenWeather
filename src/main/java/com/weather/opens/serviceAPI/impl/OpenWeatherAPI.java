@@ -34,5 +34,4 @@ public class OpenWeatherAPI implements APIService {
         dto.setTemperature(Double.parseDouble(weatherApiCall.get("main").get("temp").toString()));
         return dto;
     }
-
 }

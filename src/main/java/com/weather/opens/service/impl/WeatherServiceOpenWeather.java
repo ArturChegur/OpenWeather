@@ -17,5 +17,4 @@ public class WeatherServiceOpenWeather implements WeatherService {
     public WeatherDTO getTemperature(String cityName) {
         return apiService.getDataFromAPI(cityName);
     }
-
 }

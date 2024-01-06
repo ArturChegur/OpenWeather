@@ -15,5 +15,4 @@ public class MappingUtils {
         dto.setCityName(city.getName());
         return dto;
     }
-
 }

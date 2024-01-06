@@ -7,6 +7,6 @@ import com.weather.opens.model.City;
 
 
 @Repository
-public interface CityRepository extends CrudRepository<City,Long> {
+public interface CityRepository extends CrudRepository<City, Long> {
     City findCityByName(String cityName);
 }
