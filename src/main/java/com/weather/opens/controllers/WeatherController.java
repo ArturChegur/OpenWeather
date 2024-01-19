@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.weather.opens.model.WeatherDTO;
-import com.weather.opens.service.impl.WeatherServiceOpenWeather;
+import com.weather.opens.service.impl.WeatherServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/weather")
 @RequiredArgsConstructor
 public class WeatherController {
-    private final WeatherServiceOpenWeather weatherService;
+    private final WeatherServiceImpl weatherService;
 
     @GetMapping("/{cityName}")
     public WeatherDTO cityWeather(@PathVariable String cityName)  {

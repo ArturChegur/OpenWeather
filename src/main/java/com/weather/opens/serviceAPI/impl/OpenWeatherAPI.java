@@ -19,7 +19,7 @@ public class OpenWeatherAPI implements APIService {
     private final CityServiceImpl cityService;
     private final MappingUtils mappingUtils;
 
-    public OpenWeatherAPI(@Value("${service.openweather.address}") String ADDRESS, @Value("${service.openweather.token}") String TOKEN, CityServiceImpl cityService, MappingUtils mappingUtils) {
+    public OpenWeatherAPI(@Value("${source.open weather.address}") String ADDRESS, @Value("${source.open weather.token}") String TOKEN, CityServiceImpl cityService, MappingUtils mappingUtils) {
         this.ADDRESS = ADDRESS;
         this.TOKEN = TOKEN;
         this.cityService = cityService;

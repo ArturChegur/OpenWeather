@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class WeatherServiceOpenWeather implements WeatherService {
+public class WeatherServiceImpl implements WeatherService {
     private final OpenWeatherAPI apiService;
 
     public WeatherDTO getTemperature(String cityName) {
